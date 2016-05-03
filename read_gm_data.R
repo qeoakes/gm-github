@@ -9,6 +9,8 @@ for (input in list.files(pattern = "data-[0-9]+.csv") ) {
 
 #Big comment block
 
+#qeoakes changed the formula
+
 gdp['gdp'] <- gdp$gdpPercap * gdp$pop
 
 keep <- c('country', 'year', 'lifeExp', 'gdp')
