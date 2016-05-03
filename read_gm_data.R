@@ -9,7 +9,7 @@ for (input in list.files(pattern = "data-[0-9]+.csv") ) {
 
 #Big comment block
 
-#qeoakes changed the formula
+#Calculating GDP
 
 gdp['gdp'] <- gdp$gdpPercap * gdp$pop
 
