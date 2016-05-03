@@ -1,5 +1,17 @@
-gdp <- read.csv("data/data-1952.csv")
+#Initialize an empty data frame
+gdp = data.frame()
 
-gdp$gdp <- gdp$gdpPercap * gdp$pop
+#Read data from .csv files
+for (input in list.files(pattern = "data-[0-9]+.csv") ) {
+	new <- read.csv(input)
+	gdp <- rbind(gdp, new)
+}
+
+#Big comment block
+
+gdp['gdp'] <- gdp$gdpPercap * gdp$pop
+
+keep <- c('country', 'year', 'lifeExp', 'gdp')
+gdp <- gdp[keep]
 
 write.csv(gdp, "gdpc.csv")
